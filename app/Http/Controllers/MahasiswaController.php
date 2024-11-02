@@ -8,7 +8,7 @@ class MahasiswaController extends Controller
 {
     public function index()
     {
-        return Mahasiswa::all();  // Mengambil semua data mahasiswa
+        return Mahasiswa::all();  
     }
 
     public function store(Request $request)
@@ -19,18 +19,18 @@ class MahasiswaController extends Controller
             'jurusan' => 'required',
         ]);
 
-        return Mahasiswa::create($request->all());  // Menyimpan data baru
+        return Mahasiswa::create($request->all());  
     }
 
     public function show($id)
     {
-        return Mahasiswa::findOrFail($id);  // Mengambil data berdasarkan ID
+        return Mahasiswa::findOrFail($id); 
     }
 
     public function update(Request $request, $id)
     {
         $mahasiswa = Mahasiswa::findOrFail($id);
-        $mahasiswa->update($request->all());  // Mengupdate data
+        $mahasiswa->update($request->all()); 
         return $mahasiswa;
     }
 
